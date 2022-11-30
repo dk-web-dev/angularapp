@@ -1,0 +1,19 @@
+<h1>single album detail</h1>
+<h3>{{ albumId }}</h3>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="singlealbumDetail">
+      <td>{{ singlealbumDetail.id }}</td>
+      <td>{{ singlealbumDetail.title }}</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="errorMessage" class="text-danger">
+  {{ errorMessage }}
+</div>

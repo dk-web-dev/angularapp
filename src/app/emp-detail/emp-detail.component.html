@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <h4>{{ title }}</h4>
+  <div>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Employee</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of Employee">
+          <th scope="row">{{ emp.id }}</th>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Artist Detail</h4>
+  <div>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">grade</th>
+          <th scope="col">name</th>
+          <th scope="col">county</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let artist of ArtistDetail">
+          <th scope="row">{{ artist.grade }}</th>
+          <td>{{ artist.name }}</td>
+          <td>{{ artist.country }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

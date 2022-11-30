@@ -1,0 +1,66 @@
+<div class="container-fluid backgroundColor">
+  <!-- uppercase pipi -->
+  <p class="text-primary">uppercase pipes</p>
+  <p>{{ title | uppercase }}</p>
+
+  <!-- lowercase pipe -->
+  <p class="text-primary">lowercase pipes</p>
+  <p>{{ title | lowercase }}</p>
+
+  <!-- date pipe -->
+  <p class="text-primary">date pipes</p>
+  <p>date is : {{ todaydate }}</p>
+  <p>date is :{{ todaydate | date }}</p>
+  <p>date is :{{ todaydate | date: "shortDate" }}</p>
+  <p>date is :{{ todaydate | date: "fullDate" | uppercase }}</p>
+  <p>date is :{{ todaydate | date: "M/dd/yy" }}</p>
+  <p>date is :{{ todaydate | date: "h:mm" }}</p>
+
+  <!-- currency pipe -->
+  <p class="text-primary">currency pipes</p>
+  <p>{{ 125.33 | currency: "USD" }}</p>
+  <p>{{ 500 | currency: "INR" }}</p>
+  <p>{{ 500 | currency: "INR":true }}</p>
+
+  <!-- percentge pipe -->
+  <p class="text-primary">percentge pipes</p>
+  <p>{{ 0.8675 | percent }}</p>
+  <p>{{ 0.08436 | percent }}</p>
+  <p>{{ 0.8436 | percent: "2.2" }}</p>
+
+  <!-- decimal pipe -->
+  <p class="text-primary">decimal pipes</p>
+  <p>{{ 823.45645464 | number: "3.3" }}</p>
+  <p>{{ 1.5689 | number: "4.10" }}</p>
+
+  <!-- slice pipes -->
+  <p class="text-primary">slice pipes</p>
+  <p>{{ number | slice: 5 }}</p>
+  <p>{{ number | slice: 2:6 }}</p>
+  <p>{{ number | slice: -2 }}</p>
+  <p>{{ number | slice: -4:-2 }}</p>
+
+  <p>{{ months | slice: 4 }}</p>
+  <p>{{ months | slice: 3:8 }}</p>
+  <p>{{ months | slice: -4 }}</p>
+  <p>{{ months | slice: -8:-3 }}</p>
+
+  <!-- Json pipes -->
+  <p class="text-primary">Json pipes</p>
+  <p>{{ jsonObj }}</p>
+  <p>{{ jsonObj | json }}</p>
+
+  <!-- custom pipe -->
+  <p class="text-primary">custom pipe : ~$ ng g pipe pipe_name</p>
+  <p>digit count: {{ digit | digitalcount }}</p>
+  <p>square route is : {{ sqrtNum | sqrt }}</p>
+
+  <p class="text-primary">age Calculator using custom pipe</p>
+  <input
+    [(ngModel)]="birthday"
+    type="date"
+    placeholder="select your birth date"
+  />
+
+  <p>{{ birthday | ageCalculator }}</p>
+</div>

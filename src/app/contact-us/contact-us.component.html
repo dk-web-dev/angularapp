@@ -1,0 +1,112 @@
+<div class="container-fluid backgroundColor">
+  <h3 class="title">{{ title }}</h3>
+
+  <p class="text-primary">angular Event binding</p>
+  <button type="button" class="btn btn-success" (click)="myClickFun($event)">
+    click
+  </button>
+  <p>number of button click:{{ count }}</p>
+  <br />
+  <div>
+    <p>angular template reference variable</p>
+    <input #fname type="text" placeholder="firstname" />
+    <input #lname type="text" placeholder="lastname" />
+    <p>{{ fname.value }} {{ lname.value }}</p>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="submitValue(fname, lname)"
+    >
+      submit
+    </button>
+  </div>
+  <br />
+
+  <div>
+    <p class="text-primary">angular two way data binding</p>
+    <input type="text" [(ngModel)]="Firstname" />
+    <p>{{ Firstname }}</p>
+  </div>
+
+  <div>
+    <p class="text-primary">angular *ngIf structure Directive</p>
+    <div *ngIf="isShow; then thenBlock; else esleBlock"></div>
+    <ng-template #thenBlock
+      >then blcok template rendered using ngIf</ng-template
+    >
+    <ng-template #esleBlock
+      >else blcok template rendered using ngIf</ng-template
+    >
+
+    <button (click)="toggleValue($event)">toggle</button>
+  </div>
+  <br />
+
+  <div>
+    <p class="text-primary">angular *ngSwitch structure Directive</p>
+
+    <select [(ngModel)]="selectNum" [style.width]="'100px'">
+      <option *ngFor="let num of Number" [value]="num">{{ num }}</option>
+    </select>
+    <div [ngSwitch]="selectNum">
+      <div *ngSwitchCase="1" [style.color]="'green'">selected: one</div>
+      <div *ngSwitchCase="2" [style.color]="'green'">selected: two</div>
+      <div *ngSwitchCase="3" [style.color]="'green'">selected: three</div>
+      <div *ngSwitchCase="4" [style.color]="'green'">selected: four</div>
+      <div *ngSwitchCase="5" [style.color]="'green'">selected: five</div>
+      <div *ngSwitchCase="6" [style.color]="'green'">selected: six</div>
+      <div *ngSwitchDefault [style.color]="'red'">no matching found</div>
+    </div>
+  </div>
+  <br />
+
+  <div>
+    <p class="text-primary">Angular *ngFor Structure Directive</p>
+    <select [(ngModel)]="selectedMonth" [style.width]="'200px'">
+      <option *ngFor="let item of Months" [ngValue]="item">
+        {{ item.name }}
+      </option>
+    </select>
+    {{ selectedMonth.name }} {{ selectedMonth.color }}
+    <div [ngSwitch]="selectedMonth.name">
+      <div *ngSwitchCase="'January'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'February'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'March'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'April'" [style.color]="selectedMonth.color">
+        seleceted Month:{{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'May'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'June'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'July'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'August'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'September'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'October'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'November'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchCase="'December'" [style.color]="selectedMonth.color">
+        seleceted Month: {{ selectedMonth.name }}
+      </div>
+      <div *ngSwitchDefault>No Match Found</div>
+    </div>
+  </div>
+  <br />
+</div>

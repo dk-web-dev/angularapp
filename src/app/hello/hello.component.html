@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div>
+    <p class="text-primary">below data display from parent to child</p>
+    <span [style]="multiStyle">{{ childMessage }}</span>
+  </div>
+  <br /><br />
+  <div>
+    <p class="text-primary">below data display from child to parent</p>
+    <span [style.background-color]="'red'">{{ message }}</span>
+    <app-portfolio (eventMessage)="recievedMessage($event)"></app-portfolio>
+  </div>
+</div>

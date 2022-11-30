@@ -1,0 +1,31 @@
+<div class="backgroundColor">
+  <h1 class="hello">welcome To Angular 7 Tutorial</h1>
+
+  <!-- data binding example -->
+  <h3 class="title">{{ title }}</h3>
+
+  <p>proerty binding</p>
+  <input type="text" value="dharmesh" [id]="myid" />
+  <input type="text" value="dharmesh" id="{{ myid }}" />
+  <input type="text" value="dharmesh" bind-id="myid" />
+  <button type="button" class="btn btn-primary" [disabled]="isdisabled">
+    property binding
+  </button>
+  <br />
+  <br />
+
+  <p>class binding</p>
+  <h5 class="text-success">simple bootstrap class</h5>
+  <h5 [class]="Color">angualr class binding example</h5>
+  <h5 [class.customClass]="hasError">
+    angualr conditionaly class binding example
+  </h5>
+  <h5 [class]="multiClass">angualr multiple class binding</h5>
+  <br />
+  <br />
+
+  <p>Style binding</p>
+  <p style="color: blue">normal style example</p>
+  <span [style.backgroundColor]="'orange'">single style binding</span>
+  <p [style]="multiStyle">multiple style binding</p>
+</div>

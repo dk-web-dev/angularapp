@@ -1,0 +1,28 @@
+<div class="container-fluid backgroundColor">
+  <h4>{{ title }}</h4>
+  <div>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">userid</th>
+          <th scope="col">id</th>
+          <th scope="col">title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let album of albumList">
+          <th scope="row">{{ album.userId }}</th>
+          <th (click)="selectId(album)">
+            <a [routerLink]="['/album', album.id]" class="link-primary">{{
+              album.id
+            }}</a>
+          </th>
+          <td>{{ album.title }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="errorMessage" class="text-danger">
+    {{ errorMessage }}
+  </div>
+</div>
